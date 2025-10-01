@@ -1,10 +1,11 @@
+#%%
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-
+#%%
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
-
+#%%
 client = OpenAI(
     api_key=api_key,
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
@@ -26,3 +27,4 @@ completion = client.chat.completions.create(
 response = completion.choices[0].message.content
 
 print(response)
+

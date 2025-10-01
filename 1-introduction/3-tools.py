@@ -89,30 +89,30 @@ for tool_call in completion.choices[0].message.tool_calls:
     messages.append(
         {"role": "tool", "tool_call_id": tool_call.id, "content": json.dumps(result)}
     )
-# # --------------------------------------------------------------
-# # Step 4: Supply result and call model again
-# # --------------------------------------------------------------
+# --------------------------------------------------------------
+# Step 4: Supply result and call model again
+# --------------------------------------------------------------
 
-# class WeatherResponse(BaseModel):
-#     temperature: float = Field(
-#         description="The current temperature in celsius for the given location."
-#     )
-#     response: str = Field(
-#         description="A natural language response to the user's question."
-#     )
+class WeatherResponse(BaseModel):
+    temperature: float = Field(
+        description="The current temperature in celsius for the given location."
+    )
+    response: str = Field(
+        description="A natural language response to the user's question."
+    )
 
 
-# completion_2 = client.beta.chat.completions.parse(
-#     model="gpt-4o",
-#     messages=messages,
-#     tools=tools,
-#     response_format=WeatherResponse,
-# )
+completion_2 = client.beta.chat.completions.parse(
+    model="gpt-4o",
+    messages=messages,
+    tools=tools,
+    response_format=WeatherResponse,
+)
 
-# # --------------------------------------------------------------
-# # Step 5: Check model response
-# # --------------------------------------------------------------
+# --------------------------------------------------------------
+# Step 5: Check model response
+# --------------------------------------------------------------
 
-# final_response = completion_2.choices[0].message.parsed
-# final_response.temperature
-# final_response.response
+final_response = completion_2.choices[0].message.parsed
+final_response.temperature
+final_response.response

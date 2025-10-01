@@ -17,4 +17,6 @@
 ##### Kiến thức ngoài: Python Interactive window (chạy như jupyternotebook trong file .py)
     + download package: ipykernel jupyter
     + mỗi khối tách biệt nhau bởi #%%
-    + chạy run cell hoặc Ctrl + Enter để chạy riêng từng cell
+    + chạy run cell hoặc Shift + Enter để chạy riêng từng cell
+    + Go to next/previous cell: Ctrl+Alt+] or Ctrl+Alt+[
+    + Tham khảo: https://code.visualstudio.com/docs/python/jupyter-support-py#_intellisense

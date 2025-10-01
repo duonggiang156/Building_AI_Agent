@@ -18,7 +18,7 @@ completion = client.chat.completions.create(
         {"role":"system", "content":"You are a helpful assistant."},
         {
             "role":"user",
-            "content" : f"{user_prompt}"
+            "content" : "user_prompt"
         },
     ],
 )
